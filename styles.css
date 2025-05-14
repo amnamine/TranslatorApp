@@ -154,48 +154,23 @@ main {
 
 .download-buttons {
     display: flex;
-    gap: 1.5rem;
     justify-content: center;
     margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-.drive-link-container {
-    margin-top: 1rem;
-    text-align: center;
 }
 
 .download-btn {
     border: none;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
     border-radius: 25px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     font-family: 'Poppins', sans-serif;
-    min-width: 200px;
+    min-width: 250px;
 }
 
 .download-btn:hover {
     transform: scale(1.05);
-}
-
-.installer-btn {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-.installer-btn:hover {
-    background-color: #c0392b;
-}
-
-.app-btn {
-    background-color: white;
-    color: var(--primary-color);
-}
-
-.app-btn:hover {
-    background-color: #f0f0f0;
 }
 
 .drive-btn {
@@ -203,6 +178,7 @@ main {
     color: white;
     border: 2px solid #ff9800;
     box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
+    font-weight: 500;
 }
 
 .drive-btn:hover {

@@ -66,9 +66,6 @@ const translations = {
 document.addEventListener('DOMContentLoaded', () => {
     const langButtons = document.querySelectorAll('.lang-btn');
     const langTexts = document.querySelectorAll('.lang-text');
-    const installerBtn = document.querySelector('.installer-btn');
-    const appBtn = document.querySelector('.app-btn');
-    const driveBtn = document.querySelector('.drive-btn');
     
     // Set initial language
     let currentLang = 'en';
@@ -103,38 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Download functionality for installer
-    installerBtn.addEventListener('click', () => {
-        downloadFile('downloads/TranslatorAPP_Installer.exe', 'TranslatorAPP_Installer.exe');
-    });
-
-    // Download functionality for application
-    appBtn.addEventListener('click', () => {
-        downloadFile('downloads/TranslatorAPPV4.exe', 'TranslatorAPPV4.exe');
-    });
-
     // Google Drive link functionality
+    const driveBtn = document.querySelector('.drive-btn');
     driveBtn.addEventListener('click', () => {
         window.open('https://drive.google.com/drive/folders/1H8q5Cv5BnQ4YRjguV0C_OHnc1KtRH-rc?usp=drive_link', '_blank');
     });
-
-    // Generic download function
-    function downloadFile(path, filename) {
-        try {
-            const link = document.createElement('a');
-            link.href = path;
-            link.download = filename;
-            
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            alert(translations[currentLang]['download-success']);
-        } catch (error) {
-            alert(translations[currentLang]['download-error']);
-            console.error('Download error:', error);
-        }
-    }
 
     // Add smooth scroll for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
